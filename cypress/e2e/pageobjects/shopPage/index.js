@@ -1,7 +1,7 @@
 import { elements as shopPageElements } from './elements';
 
 class shopPage {
-    validateContentIsVisible() {
+    assertContentIsVisible() {
         cy.get(shopPageElements.content).should('be.visible');
     }
 
@@ -21,13 +21,26 @@ class shopPage {
         cy.get(shopPageElements.seleniumCategoryButton).click();
     }
 
-    validateContentFilterText(text) {
+    assertContentFilterTextContains(text) {
         cy.get(shopPageElements.contentFilterText).then(($text) => {
             expect($text).to.contain(text);
         })
     }
 
-    clickProductDisplayedByIndex(index) {
-        cy.get(shopPageElements.productDisplayed).eq(index);
+    openShopPage() {
+        cy.visit('/shop')
     }
+
+    assertItIsShopPage() {
+        cy.url().should('contain', "shop");
+    }
+
+    clickOnProductByIndex(index) {
+        cy.get(shopPageElements.productExternalDiv).find(shopPageElements.product).eq(index).click();
+    }
+
+    getNumberOfProductsShown() {
+        cy.get(shopPageElements.productExternalDiv).find(shopPageElements.product);
+    }
+
 } export default new shopPage();

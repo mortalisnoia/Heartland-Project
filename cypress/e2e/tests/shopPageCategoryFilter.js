@@ -1,0 +1,23 @@
+import shopPage from "../pageobjects/shopPage/index.js";
+import productPage from "../pageobjects/productPage/index.js";
+import {Given, When, Then} from "cypress-cucumber-preprocessor/steps";
+
+Given("I am on the Shop page", () => {
+    shopPage.openShopPage();
+    shopPage.assertItIsShopPage();
+})
+
+When("I filter for a product category", () => {
+    shopPage.clickHtmlCategoryButton();
+})
+
+Then("The filter text should show contain category", () => {
+    shopPage.assertContentIsVisible();
+    shopPage.assertContentFilterTextContains('HTML');
+})
+
+Then("All products listed should be from this category", () => {
+    shopPage.clickOnProductByIndex(0);
+    productPage.assertProductCategoryIs('HTML');
+    //cy.go('back');
+})

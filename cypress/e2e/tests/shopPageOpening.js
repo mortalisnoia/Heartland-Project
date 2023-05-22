@@ -1,10 +1,11 @@
 import header from "../pageobjects/header/index.js";
 import shopPage from "../pageobjects/shopPage/index.js";
+import landingPage from "../pageobjects/landingPage/index.js";
 import {Given, When, Then} from "cypress-cucumber-preprocessor/steps";
 
 Given("I am on the landing page", () => {
-  cy.visit('/');
-  cy.url().should('equal', Cypress.config().baseUrl)
+  landingPage.openLandingPage();
+  landingPage.assertThisIsLandingPage();
 })
 
 When("I go to the Shop page", () => {
@@ -13,8 +14,6 @@ When("I go to the Shop page", () => {
 })
 
 Then("the list of products should appear", () => {
-  shopPage.validateContentIsVisible();
-  shopPage.clickHtmlCategoryButton();
-  shopPage.validateContentFilterText('HTML');
-  //expect(cy.get('.woocommerce-breadcrumb')).to.contain('HTML');
+  shopPage.assertContentIsVisible();
+  shopPage.clickOnProductByIndex(0);
 })

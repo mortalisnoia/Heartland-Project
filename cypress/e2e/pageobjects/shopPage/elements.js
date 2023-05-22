@@ -5,5 +5,6 @@ export const elements = {
     jsCategoryButton: '.cat-item-21 > a',
     seleniumCategoryButton: '.cat-item-17 > a',
     content: '#content',
-    productDisplayed: '.products masonry-done>li'
+    productExternalDiv: '#content>ul',
+    product: 'li'
 }
