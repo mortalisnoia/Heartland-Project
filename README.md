@@ -15,7 +15,7 @@ Headless mode won't open a browser instance, but you can follow the tests runnin
 ### Run on a browser
 Cypress has different browsers for you to choose, so just do the following
 * ```npm run open``` - and the Cypress interface will open
-* Click on 'E2E Testing'
+* Click on *E2E Testing*
 * Select the browser you want
-* Click on "Start E2 Testing in browser"
-* Then you can select which spec you want to run, or you can click on "run all specs" to run them all
+* Click on *Start E2 Testing in browser*
+* Then you can select which spec you want to run, or you can click on *Run all specs* to run them all
