@@ -11,3 +11,9 @@ Feature: Filtering by a product category and checking filter text
         Given I am on the Shop page
         When I filter for a product category
         Then Should list products from this category
+
+    Scenario: Filter for a category should show the same amount of products as the count shows
+
+        Given I am on the Shop page
+        When I filter for a product category
+        Then The number of products shown should be the same as the count on the filter

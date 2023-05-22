@@ -47,4 +47,14 @@ class shopPage {
         cy.get(shopPageElements.productOnSale).eq(0).click();
     }
 
+    assertNumberOfProductsListedIsEqualToFilterCount() {
+        cy.get(shopPageElements.filterCount).invoke('text')
+            .invoke('replaceAll', '(', '')
+            .invoke('replaceAll', ')', '')
+            .then((filterCount) => {
+                cy.get(shopPageElements.productExternalDiv).find(shopPageElements.product).should('have.length', filterCount)
+        })
+        
+    }
+
 } export default new shopPage();

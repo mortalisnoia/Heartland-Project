@@ -19,5 +19,8 @@ Then("The filter text should show contain category", () => {
 Then("Should list products from this category", () => {
     shopPage.clickOnProductByIndex(0);
     productPage.assertProductCategoryIs('HTML');
-    //cy.go('back');
+})
+
+Then("The number of products shown should be the same as the count on the filter", () => {
+    shopPage.assertNumberOfProductsListedIsEqualToFilterCount();
 })
