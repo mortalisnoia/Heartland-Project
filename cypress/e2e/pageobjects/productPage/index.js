@@ -10,28 +10,12 @@ class productPage {
         cy.get(productPageElements.addToCartButton).should('not.exist');
     }
 
-    getProductOldPrice() {
-        cy.get(productPageElements.oldPrice);
-    }
-
-    getProductSalePrice() {
-        cy.get(productPageElements.salePrice);
-    }
-
-    getProductNormalPrice() {
-        cy.get(productPageElements.normalPrice);
-    }
-
     assertSalePriceIsSmallerThanOldPrice() {
-        const salePrice = "";
-        const oldPrice = "";
-        this.getProductSalePrice.should(($salePrice) => {
-            salePrice = $salePrice.text();
+        cy.get(productPageElements.salePrice).invoke('text').invoke('replaceAll', '₹', '').then(parseFloat).then((salePrice) => {
+            cy.get(productPageElements.oldPrice).invoke('text').invoke('replaceAll', '₹', '').then(parseFloat).then((oldprice) => {
+                expect(oldprice).to.be.above(salePrice);
+            })
         })
-        this.getProductOldPrice.should(($oldPrice) => {
-            oldPrice = $oldPrice.text();
-        })
-        salePrice.then(parseFloat).should('be.lessThan', oldPrice.then(parseFloat));
     }
 
     getProductCategory() {

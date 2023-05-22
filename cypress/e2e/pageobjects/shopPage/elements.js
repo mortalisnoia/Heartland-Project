@@ -6,5 +6,6 @@ export const elements = {
     seleniumCategoryButton: '.cat-item-17 > a',
     content: '#content',
     productExternalDiv: '#content>ul',
-    product: 'li'
+    product: 'li',
+    productOnSale: '.onsale'
 }

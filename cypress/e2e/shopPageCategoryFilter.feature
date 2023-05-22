@@ -10,4 +10,4 @@ Feature: Filtering by a product category and checking filter text
 
         Given I am on the Shop page
         When I filter for a product category
-        Then All products listed should be from this category
+        Then Should list products from this category

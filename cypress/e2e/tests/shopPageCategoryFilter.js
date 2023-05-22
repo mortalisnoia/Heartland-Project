@@ -16,7 +16,7 @@ Then("The filter text should show contain category", () => {
     shopPage.assertContentFilterTextContains('HTML');
 })
 
-Then("All products listed should be from this category", () => {
+Then("Should list products from this category", () => {
     shopPage.clickOnProductByIndex(0);
     productPage.assertProductCategoryIs('HTML');
     //cy.go('back');

@@ -43,4 +43,8 @@ class shopPage {
         cy.get(shopPageElements.productExternalDiv).find(shopPageElements.product);
     }
 
+    clickOnProductOnSale(){
+        cy.get(shopPageElements.productOnSale).eq(0).click();
+    }
+
 } export default new shopPage();
