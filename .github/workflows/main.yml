@@ -1,8 +1,9 @@
 name: UI Tests
 
 on:
-  push
-  
+  push:
+    branches: '**'
+
 jobs:
   test:
     runs-on: ubuntu-latest
