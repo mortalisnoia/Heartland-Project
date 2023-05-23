@@ -8,6 +8,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber())
     },
+    experimentalRunAllSpecs: true,
     specPattern: "**/*.feature",
     baseUrl: "https://practice.automationtesting.in/"
   },

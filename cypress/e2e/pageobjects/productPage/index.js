@@ -3,7 +3,7 @@ import { elements as productPageElements } from './elements';
 class productPage {
 
     assertProductIsOutOfStock() {
-        cy.get(productPageElements.stock).should('have.text', 'Out of Stock');
+        cy.get(productPageElements.stock).should('have.text', 'Out of stock');
     }
 
     assertAddToCartButtonIsNotVisible() {

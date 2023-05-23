@@ -24,3 +24,11 @@ Then("Should list products from this category", () => {
 Then("The number of products shown should be the same as the count on the filter", () => {
     shopPage.assertNumberOfProductsListedIsEqualToFilterCount();
 })
+
+When("I order from price: low to high", () => {
+
+})
+
+Then("Every product price should be less or equal than the next one", () => {
+    
+})

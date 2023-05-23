@@ -8,5 +8,6 @@ export const elements = {
     productExternalDiv: '#content>ul',
     product: 'li',
     productOnSale: '.onsale',
-    filterCount: '.cat-item-19 > .count'
+    filterCount: '.cat-item-19 > .count',
+    select: 'select'
 }
