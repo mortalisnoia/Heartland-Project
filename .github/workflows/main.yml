@@ -1,12 +1,8 @@
-name: API Tests
+name: UI Tests
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    types: [ opened, synchronize ]
-
-
+  push
+  
 jobs:
   test:
     runs-on: ubuntu-latest
